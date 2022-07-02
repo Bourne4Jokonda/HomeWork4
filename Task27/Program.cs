@@ -1,65 +1,18 @@
-﻿// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+﻿// // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-// 452 -> 11
-// 82 -> 10
-// 9012 -> 12
+// // 452 -> 11
+// // 82 -> 10
+// // 9012 -> 12
 
-Console.WriteLine("Введите возводимое число A: ");
-int A = Convert.ToInt32(Console.ReadLine());
-int sum=0;
-int count = 0;
-int countD =1;
-int numberA =A%10;
-int i=0;
+Console.WriteLine("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
 
-int getCountDigits (int n)
+while (n > 0)
 {
-    while(A>0)
-    {
-        A /=10;
-        count++;
-    }
-    
-    //Console.WriteLine($"Число цифр: {count}");
-    //Console.WriteLine($"Цикл1 Число {count}");//wr1
-    return A;
-    
-}
-Console.WriteLine($"ЧИСЛО A:{A}");
-getCountDigits(count);
-Console.WriteLine($"ЧИСЛО count:{count}");
-int[]strA = new int [count];
+    sum = sum + n % 10;
+    n /= 10;
 
-int SumD (int n)
-{
-    while(i<count-1)
-    strA[i]=A%10;
-    Console.WriteLine($"Эл. мас:{strA[i]}");
-    return i;
 }
-//SumD(countD);
-//Console.WriteLine(strA);
-Console.WriteLine(numberA);//wr2
-// for(int i=0; i<=count-1;i++)
-// {
-//     Console.WriteLine($"Цикл1 счетчик{i}");//wr3
-//     Console.WriteLine($"ЭлДо{strA[i]}");//wr4
-//     Console.WriteLine(sum);//wr
-//     sum=sum+strA[i];
-//     Console.WriteLine($"ЭдПо{strA[i]}");//wr5
-//     Console.WriteLine(sum);//wr6
-// }
-while(i<=count-1)
-{
-    Console.WriteLine($"Цикл2 счетчик{i}");//wr3
-    Console.WriteLine($"Эл До{strA[i]}");//wr4
-    Console.WriteLine(sum);//wr
 
-    sum=sum+strA[i];
-    Console.WriteLine($"Эл После{strA[i]}");//wr5
-    Console.WriteLine(sum);//wr6
-    i++;
-    
-}
-Console.WriteLine(sum);//wr7
-Console.WriteLine($"ЧИСЛО{A}");//wr8
+Console.WriteLine($"Сумма цифр числа N равна = {sum}");
